@@ -53,3 +53,20 @@ Database Design: Optimized schema with indexing for efficient queries.
 API Development: RESTful APIs for each service.
 Design Patterns: Utilize appropriate design patterns for maintainability.
 Indexing in DB: Implement indexing for high-performance queries.
+
+
+
+Design Patterns & Principles Used:
+
+
+Factory Pattern: Used for creating different types of planes, runways, and luggage objects dynamically.
+Observer Pattern: Implemented to notify subsystems (e.g., baggage handling) when a flight status changes.
+SOLID Principles: Ensured clean, maintainable, and scalable code by following:
+Single Responsibility Principle (SRP) – Each class has a well-defined responsibility.
+Open-Closed Principle (OCP) – System is open for extension but closed for modification.
+Liskov Substitution Principle (LSP) – Ensures derived classes substitute base classes without issues.
+Interface Segregation Principle (ISP) – Avoids forcing classes to implement unnecessary methods.
+Dependency Inversion Principle (DIP) – High-level modules depend on abstractions, not concrete implementations.
+Expected Implementation
+Database Design: Optimized schema with indexing for efficient queries.
+API Development: RESTful APIs for each service.
