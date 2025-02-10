@@ -1,49 +1,55 @@
-## Getting Started
+Airport Service
+Overview
+This service manages airport operations, including planes, runways, boarding, and luggage handling. The system provides APIs for:
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Managing planes and runways
+Handling luggage and luggage vans
+Boarding processes
+Features
+Planes: Manage plane details such as model, capacity, and airline.
+Runways: Track availability of runways for takeoff and landing.
+Boarding: Handle boarding gates and their statuses.
+Luggage Handling: Manage luggage vans and their trips for transporting luggage.
+Database Design
+The system consists of the following entities:
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-
-
-
-
-* Create Airport Service with following functionalities:
-* 
-* 
-* planes runways boarding planesluggage (luggage van, trips to deliver luggage)
-* 
-* 
-* I was expected to create DB design, APIs for the flow, designs patterns that can be implemented, indexing in DB
-
-
-classes
-
-plane : planeId, model , capacity , Airline 
-runway : runwayId,boolean Status , 
-luggage van : vanId, 
-boarding gate: gateId, location,status
-Flight : flightId, plane, runway , gete , departureTime, arrivalTime , status
-Luggage : luggateId, weight, Passenger , Flight flight 
-Luggage Van:  private String vanId;
-    private double capacity;
-    private VanStatus status;
-
-    Luggae Trip: 
-
-RunwayController 
-LuggageCotroller 
-boarding
-
+1. Plane
+planeId: Unique identifier for the plane.
+model: Model of the plane.
+capacity: Passenger capacity.
+airline: Associated airline.
+2. Runway
+runwayId: Unique identifier for the runway.
+status: Boolean indicating availability.
+3. Boarding Gate
+gateId: Unique identifier for the boarding gate.
+location: Physical location of the gate.
+status: Availability status.
+4. Flight
+flightId: Unique flight identifier.
+plane: Reference to the assigned plane.
+runway: Assigned runway.
+gate: Boarding gate.
+departureTime: Scheduled departure time.
+arrivalTime: Expected arrival time.
+status: Current flight status.
+5. Luggage
+luggageId: Unique identifier for the luggage.
+weight: Weight of the luggage.
+passenger: Associated passenger.
+flight: Assigned flight.
+6. Luggage Van
+vanId: Unique identifier for the luggage van.
+capacity: Maximum capacity of the van.
+status: Operational status.
+7. Luggage Trip
+Tracks the movement of luggage vans to deliver luggage.
+Controllers
+RunwayController: Manages runway operations.
+LuggageController: Handles luggage-related operations.
+BoardingController: Manages boarding operations.
+Expected Implementation
+Database Design: Optimized schema with indexing for efficient queries.
+API Development: RESTful APIs for each service.
+Design Patterns: Utilize appropriate design patterns for maintainability.
+Indexing in DB: Implement indexing for high-performance queries.
